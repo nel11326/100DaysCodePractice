@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  background-color: rgb(233, 215, 207);
+  color: rgb(83, 75, 75);
+}
+
+h1 {
+  font-family: "Gill Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-family: "Lucida Sans", sans-serif;
+}
