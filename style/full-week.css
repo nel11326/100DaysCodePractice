@@ -1,26 +1,59 @@
-body {
-    text-align: center;
-    background-color: rgb(233, 215, 207);
-    margin: 50px;
-    color: rgb(83, 75, 75);
+header {
+  margin-bottom: 64px;
 }
 
 h1 {
-    font-family: 'Gill Sans', sans-serif;
-    font-size: 3rem;
+  font-size: 48px;
+  color: rgb(71, 62, 62);
+  margin: 12px 0;
 }
 
+#description {
+  margin-bottom: 36px;
+}
+
+/* header p {
+  margin-bottom: 36px;
+} */
+
 a {
-    text-decoration: none;
-    font-family: Georgia, serif;
-    font-weight: bold;
+  padding: 12px 48px;
+  background-color: rgb(167, 1, 78);
+  color: white;
+  border: 3px solid rgb(167, 180, 78);
+  border-radius: 4px;
+  font-size: 24px;
 }
 
 a:hover {
-    text-decoration: underline;
+  background-color: rgb(180, 12, 90);
+  text-decoration: none;
 }
 
-p {
-    font-family:'Lucida Sans', sans-serif;
+ul {
+  list-style: none;
+  width: 500px;
+  margin: 36px auto 0 auto;
+  padding: 0;
+}
 
+li {
+  padding: 16px;
+  margin: 32px;
+  background-color: rgb(223, 136, 124);
+  border-radius: 6px;
+}
+
+h2 {
+  color: rgb(78, 13, 5);
+  font-family: "Lucida Sans", sans-serif;
+}
+
+main p {
+  margin: 12px;
+  color: rgb(71, 29, 22);
+}
+
+.highlight-goal {
+  background-color: rgb(216, 79, 61);
 }
