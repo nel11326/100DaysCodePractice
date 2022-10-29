@@ -48,8 +48,11 @@ textarea:focus {
     border-color: rgb(32, 5, 63);
 }
 
+#action-button {
+    text-align: right;
+}
+
 button {
-    display: block;
     font: inherit;
     background-color: rgb(32, 5, 63);
     color: white;
