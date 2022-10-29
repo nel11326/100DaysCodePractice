@@ -5,15 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="./styles.css" />
     <title>HTML Forms</title>
   </head>
   <body>
-    <form 
-    action="/user-data" 
-    method="POST">
-      <input type="text" name="user-name" />
+    <form action="/" method="GET">
+      <label for="userName">Your Name</label>
+      <input type="text" name="userName" id="user-name" />
+      <label for="userEmail">Your email address</label>
+      <input type="email" name="userEmail" id="user-email" />
+      <label for="userAge">Your age</label>
+      <input type="number" name="userAge" id="user-age" />
+      <label for="userPassword">Your password</label>
+      <input type="password" name="userPassword" id="user-password" />
+      <label for="birthdate">Your birth date</label>
+      <input type="date" name="birthdate" id="user-birthdate" />
+      <hr />
+      <h2>How should we verify your account?</h2>
+      <div class="form-control-inline">
+        <input
+          type="radio"
+          name="verify"
+          id="verify-text-message"
+          value="text-message"
+        />
+        <label for="verify-text-message">Via text message (SMS)</label>
+      </div>
+      <div class="form-control-inline">
+        <input type="radio" name="verify" id="verify-phone" value="phone" />
+        <label for="verify-phone">Via a phone call</label>
+      </div>
+      <div class="form-control-inline">
+        <input type="radio" name="verify" id="verify-email" value="email" />
+        <label for="verify-email">Via an email</label>
+      </div>
       <button>Submit</button>
     </form>
   </body>
