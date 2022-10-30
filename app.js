@@ -1,5 +1,28 @@
 let age = 32;
-let userName = "Max";
-let hobbies = ["Sport", "Cooking", "Reading"];
+// alert(age);
 
-alert(hobbies[0]);
+let userName = "Max";
+// console.log(userName);
+
+let hobbies = ["Sport", "Cooking", "Reading"];
+// console.log(hobbies[2]);
+
+let job = {
+  title: "Developer",
+  place: "New York",
+  salary: 50000,
+};
+// console.log(job.place);
+
+let totalAdultYears;
+
+function calculateAdultYears(userAge) {
+  return userAge - 18;
+}
+
+totalAdultYears = calculateAdultYears(age);
+console.log(totalAdultYears);
+
+age = 45;
+totalAdultYears = calculateAdultYears(age);
+console.log(totalAdultYears);
