@@ -26,3 +26,13 @@ console.log(totalAdultYears);
 age = 45;
 totalAdultYears = calculateAdultYears(age);
 console.log(totalAdultYears);
+
+let person = {
+  name: "max", // Property
+  greet() {
+    // Method
+    console.log("Hello!");
+  },
+};
+
+person.greet();
