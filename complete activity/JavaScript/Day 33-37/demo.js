@@ -15,3 +15,5 @@ function updateRemainingCharacters(event) {
 }
 
 productNameInputElement.addEventListener("input", updateRemainingCharacters);
+
+const spanElement = document.getElementById("remaining-chars");
