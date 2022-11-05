@@ -15,48 +15,57 @@
 
     <!-- My CSS styles -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/overlays.css" />
+    <link rel="stylesheet" href="./styles/configuration.css" />
+    <link rel="stylesheet" href="./styles/game.css" />
 
     <!-- JavaScript -->
-    <script src="./app.js" defer></script>
+    <script src="./scripts/config.js" defer></script>
+    <script src="./scripts/game.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
     <title>Tic Tac Toe</title>
   </head>
   <body>
-
+    <div id="backdrop"></div>
     <header id="main-header">
       <h1>Play Tic, Tac, Toe</h1>
       <p>Built with HTML, CSS, JavaScript</p>
     </header>
 
     <main>
-      <aside>
+      <aside class="modal" id="config-overlay">
         <h2>Choose Your Name</h2>
         <form action="">
-          <div>
+          
+            <div class="form-control">
             <label for="playername"> Player Name</label>
             <input type="text" name="playername" id="playername" />
           </div>
+
           <div>
-            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="button" class="btn btn-alt" id="cancel-config-btn">Cancel</button>
             <button type="submit" class="btn">Confirm</button>
           </div>
+
         </form>
       </aside>
+
       <section id="game-configuration">
         <ol>
           <li>
             <article>
               <h2>Player 1</h2>
               <h3>Player Name</h3>
-              <p>X</p>
-              <button class="btn btn-alt">Edit</button>
+              <p class="player-symbol">X</p>
+              <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
             </article>
           </li>
           <li>
             <article>
               <h2>Player 2</h2>
               <h3>Player Name</h3>
-              <p>O</p>
-              <button class="btn btn-alt">Edit</button>
+              <p class="player-symbol">O</p>
+              <button class="btn btn-alt" id="edit-payer-2-btn">Edit</button>
             </article>
           </li>
         </ol>
@@ -64,22 +73,22 @@
       </section>
 
       <section id="active-game">
-        <article>
-          <h3>You Won! <span id="winner-name">Player Name</span></h3>
+        <article id="game-over">
+          <h2>You Won! <span id="winner-name">Player Name</span></h2>
           <p>Click "Start New Game" above, to start a new game!</p>
         </article>
 
         <p>It's your turn <span id="active-player-name">Player Name</span>!</p>
-        <ol>
+        <ol id="game-board">
+          <li class="disabled">X</li>
           <li></li>
-          <li></li>
-          <li></li>
+          <li class="disabled">O</li>
 
           <li></li>
-          <li></li>
+          <li class="disabled">X</li>
           <li></li>
 
-          <li></li>
+          <li class="disabled">O</li>
           <li></li>
           <li></li>
         </ol>
