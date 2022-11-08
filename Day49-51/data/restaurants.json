@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Test",
+        "address": "Test street 5",
+        "cuisine": "Italian",
+        "website": "https://mytest.com",
+        "description": "it's awesome!"
+      },
+      {
+        "name": "Test2",
+        "address": "Test street 10,",
+        "cuisine": "Indian",
+        "website": "https://mygreattest.com",
+        "description": "it's also amazing!"
+      },
+      {
+        "name": "Restaurant 3",
+        "address": "Awesome Street 5",
+        "cuisine": "German",
+        "website": "https://awesome.com",
+        "description": "It's amazing!"
+      }
+]
