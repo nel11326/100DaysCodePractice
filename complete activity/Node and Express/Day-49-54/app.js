@@ -1,10 +1,7 @@
-const fs = require("fs");
 const path = require("path");
 
 const express = require("express");
-const uuid = require("uuid");
 
-const resData = require("./util/restaurant-data");
 const defaultRoutes = require("./routes/default");
 const restaurantRoutes = require("./routes/restaurants");
 
