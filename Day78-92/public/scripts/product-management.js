@@ -1,4 +1,4 @@
-const deleteProductButtonElement = document.querySelectorAll(
+const deleteProductButtonElements = document.querySelectorAll(
   ".product-item button"
 );
 

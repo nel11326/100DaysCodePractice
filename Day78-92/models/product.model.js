@@ -45,7 +45,7 @@ class Product {
   }
 
   updateImageData() {
-    this.imagePath = `./product-data/images/${this.image}`;
+    this.imagePath = `product-data/images/${this.image}`;
     this.imageUrl = `/products/assets/images/${this.image}`;
   }
 

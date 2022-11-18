@@ -17,7 +17,7 @@ async function getSignup(req, res) {
       city: "",
     };
   }
-  res.render("./customer/auth/signup", {
+  res.render("customer/auth/signup", {
     inputData: sessionData,
   });
 }
@@ -92,7 +92,7 @@ async function signup(req, res, next) {
   res.redirect("/login");
 }
 
-async function getLogin(req, res) {
+function getLogin(req, res) {
   let sessionData = sessionFlash.getSessionData(req);
 
   if (!sessionData) {
@@ -101,7 +101,7 @@ async function getLogin(req, res) {
       password: "",
     };
   }
-  res.render("./customer/auth/login", {
+  res.render("customer/auth/login", {
     inputData: sessionData,
   });
 }
@@ -146,7 +146,7 @@ async function login(req, res, next) {
   });
 }
 
-async function logout(req, res) {
+function logout(req, res) {
   authUtil.destroyUserAuthSession(req);
   res.redirect("/login");
 }

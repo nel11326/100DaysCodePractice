@@ -33,7 +33,7 @@ async function createNewProduct(req, res, next) {
 async function getUpdateProduct(req, res, next) {
   try {
     const product = await Product.findById(req.params.id);
-    res.render("/admin/products/update-product", { product: product });
+    res.render("admin/products/update-product", { product: product });
   } catch (error) {
     next(error);
   }
@@ -44,9 +44,11 @@ async function updateProduct(req, res, next) {
     ...req.body,
     _id: req.params.id,
   });
+
   if (req.file) {
     product.replaceImage(req.file.filename);
   }
+
   try {
     await product.save();
   } catch (error) {
