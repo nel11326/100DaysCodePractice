@@ -1,9 +1,9 @@
-const User = require("../models/user.mode");
+const User = require("../models/user.model");
 const authUtil = require("../util/authentication");
 const validation = require("../util/validation");
 const sessionFlash = require("../util/session-flash");
 
-async function getSignup(req, res) {
+function getSignup(req, res) {
   let sessionData = sessionFlash.getSessionData(req);
 
   if (!sessionData) {
@@ -17,9 +17,8 @@ async function getSignup(req, res) {
       city: "",
     };
   }
-  res.render("customer/auth/signup", {
-    inputData: sessionData,
-  });
+
+  res.render("customer/auth/signup", { inputData: sessionData });
 }
 
 async function signup(req, res, next) {
@@ -48,7 +47,7 @@ async function signup(req, res, next) {
       req,
       {
         errorMessage:
-          "Please Check your input. Password must be at least 6 character long, postal code must be 5 character long",
+          "Please check your input. Password must be at least 6 character slong, postal code must be 5 characters long.",
         ...enteredData,
       },
       function () {
@@ -68,9 +67,9 @@ async function signup(req, res, next) {
   );
 
   try {
-    const existAlready = await user.existAlready();
+    const existsAlready = await user.existsAlready();
 
-    if (existAlready) {
+    if (existsAlready) {
       sessionFlash.flashDataToSession(
         req,
         {
@@ -89,6 +88,7 @@ async function signup(req, res, next) {
     next(error);
     return;
   }
+
   res.redirect("/login");
 }
 
@@ -101,15 +101,13 @@ function getLogin(req, res) {
       password: "",
     };
   }
-  res.render("customer/auth/login", {
-    inputData: sessionData,
-  });
+
+  res.render("customer/auth/login", { inputData: sessionData });
 }
 
 async function login(req, res, next) {
   const user = new User(req.body.email, req.body.password);
   let existingUser;
-
   try {
     existingUser = await user.getUserWithSameEmail();
   } catch (error) {
@@ -119,7 +117,7 @@ async function login(req, res, next) {
 
   const sessionErrorData = {
     errorMessage:
-      "Invalid credentials - please double-check your email and password",
+      "Invalid credentials - please double-check your email and password!",
     email: user.email,
     password: user.password,
   };
@@ -134,6 +132,7 @@ async function login(req, res, next) {
   const passwordIsCorrect = await user.hasMatchingPassword(
     existingUser.password
   );
+
   if (!passwordIsCorrect) {
     sessionFlash.flashDataToSession(req, sessionErrorData, function () {
       res.redirect("/login");

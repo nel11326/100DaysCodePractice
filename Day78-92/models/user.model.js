@@ -7,10 +7,10 @@ class User {
   constructor(email, password, fullname, street, postal, city) {
     this.email = email;
     this.password = password;
-    this.fullname = fullname;
+    this.name = fullname;
     this.address = {
       street: street,
-      postal: postal,
+      postalCode: postal,
       city: city,
     };
   }
@@ -25,14 +25,11 @@ class User {
   }
 
   getUserWithSameEmail() {
-    return db.getDb().collection("users").findOne({
-      email: this.email,
-    });
+    return db.getDb().collection("users").findOne({ email: this.email });
   }
 
-  async existAlready() {
+  async existsAlready() {
     const existingUser = await this.getUserWithSameEmail();
-
     if (existingUser) {
       return true;
     }

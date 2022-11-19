@@ -1,4 +1,4 @@
-async function handleErrors(error, req, res, next) {
+function handleErrors(error, req, res, next) {
   console.log(error);
 
   if (error.code === 404) {
